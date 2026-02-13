@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:wght@400;600&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	--bg-primary: #f8f9fa;
+	--bg-nav: #ffffff;
+	--text-primary: #1c1a19;
+	--hover-bg: #e9ecef;
+	--card-bg: #ffffff;
+	--card-shadow: 0 10px 25px rgba(0, 0, 0, 0.05), 0 4px 10px rgba(0, 0, 0, 0.03);
+	--accent: #6366f1;
+}
+
+:root[theme="dark"] {
+	--bg-primary: #151312;
+	--bg-nav: #1c1a19;
+	--text-primary: #f0f0f0;
+	--hover-bg: #2a2a2a;
+	--card-bg: #1c1a19;
+	--card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	--accent: #6366f1;
+}
+
+body {
+	background-color: var(--bg-primary);
+	font-family: 'Poppins';
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 2rem;
+	transition: background-color 0.3s ease;
+	color: var(--text-primary);
+}
+
+nav ul {
+	list-style-type: none;
+	display: flex;
+	gap: 2.5rem;
+	background-color: var(--card-bg);
+	padding: 0.8rem 2rem;
+	border-radius: 50px;
+	transition: background-color 0.2s;
+	box-shadow: var(--card-shadow);
+}
+
+nav ul li a {
+	text-decoration: none;
+	transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+nav ul li a:active {
+	transform: scale(0.92);
+}
+
+.material-symbols-outlined {
+	color: var(--text-primary);
+	font-size: 24px;
+}
+
+.icon-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+}
+
+.hover-label {
+	position: absolute;
+	top: 45px;
+	background-color: var(--text-primary);
+	color: var(--card-bg);
+	padding: 4px 12px;
+	border-radius: 6px;
+	font-size: 12px;
+	opacity: 0;
+	pointer-events: none;
+	transition: all 0.2s ease;
+	transform: translateY(-5px);
+	white-space: nowrap;
+}
+
+.icon-wrapper:hover .hover-label {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+nav ul li a.active .material-symbols-outlined {
+	color: var(--accent);
+}
+
+nav ul li a.active .hover-label {
+	display: none;
+}
+
+.theme-toggle {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+main {
+	display: flex;
+	gap: 2rem;
+	padding: 3rem 2rem;
+	max-width: 1100px;
+	width: 100%;
+}
+
+.card {
+	background-color: var(--card-bg);
+	border-radius: 1.5rem;
+	padding: 2rem;
+	box-shadow: var(--card-shadow);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card:first-child {
+	flex: 0 0 300px;
+	height: fit-content;
+	position: sticky;
+	top: 2rem;
+	text-align: center;
+}
+
+.card:first-child img {
+	width: 100%;
+	border-radius: 1rem;
+	margin-bottom: 1.5rem;
+}
+
+.card:first-child h3 {
+	font-family: 'Montserrat';
+	font-size: 1.6rem;
+	margin-bottom: 0.5rem;
+}
+
+.card:first-child p {
+	font-size: 0.9rem;
+	opacity: 0.7;
+	line-height: 1.5;
+}
+
+.content-card {
+	flex: 1;
+}
+
+h1 {
+	font-family: 'Montserrat';
+	font-weight: 900;
+	font-size: 3.5rem;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+.secondary-header {
+	color: var(--accent);
+	font-family: 'Montserrat';
+	font-weight: 900;
+	font-size: 3.5rem;
+	line-height: 1;
+	text-transform: uppercase;
+	letter-spacing: -1px;
+}
+
+.content-card p {
+	font-size: 1.1rem;
+	line-height: 1.8;
+	margin-top: 1.5rem;
+	margin-bottom: 1.5rem;
+	text-indent: 0;
+}
+
+/* Projects grid */
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+	gap: 2rem;
+	margin-top: 3rem;
+}
+
+.project-item {
+	background: var(--card-bg);
+	padding: 2rem;
+	border-radius: 1rem;
+	box-shadow: var(--card-shadow);
+	transition: transform 0.3s ease;
+}
+
+.project-item:hover {
+	transform: translateY(-6px);
+}
+
+.project-item h2 {
+	font-family: 'Montserrat';
+	font-size: 1.7rem;
+	margin-bottom: 0.8rem;
+}
+
+.project-item p {
+	opacity: 0.85;
+	line-height: 1.6;
+}
+
+footer {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.6;
+    border-top: 1px solid var(--hover-bg);
+}
+
+footer p {
+    margin: 0;
+}
+
+.floating-badge {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #6366f1;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.floating-badge:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.floating-badge p {
+    margin: 0;
+}
