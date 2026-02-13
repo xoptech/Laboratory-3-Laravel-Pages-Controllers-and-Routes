@@ -19,19 +19,63 @@ A personal portfolio application built with Laravel featuring three distinct pag
 
 ---
 
-### How to Run Locally
+# Prerequisites
+- PHP 8.1+
+- Composer
+- Git
 
+## How to Run Locally
+
+### Step-by-Step
+
+**1. Clone the repository**
 ```bash
-# 1. Clone the repository
-git clone [https://github.com/xoptech/Laboratory-3-Laravel-Pages-Controllers-and-Routes.git](https://github.com/xoptech/Laboratory-3-Laravel-Pages-Controllers-and-Routes.git)
+git clone https://github.com/xoptech/Laboratory-3-Laravel-Pages-Controllers-and-Routes.git
 cd Laboratory-3-Laravel-Pages-Controllers-and-Routes
+```
 
-# 2. Install dependencies
+**2. Install dependencies**
+```bash
 composer install
+```
 
-# 3. Setup Configuration
+**3. Setup environment**
+
+Linux/Mac:
+```bash
 cp .env.example .env
-php artisan key:generate
+```
 
-# 4. Start the server
+Windows:
+```bash
+copy .env.example .env
+```
+
+**4. Generate app key**
+```bash
+php artisan key:generate
+```
+
+**5. Start the server**
+```bash
 php artisan serve
+```
+
+**6. Visit:** http://localhost:8000
+
+### One-Liner (Copy-Paste All)
+
+**Linux/Mac:**
+~~~bash
+git clone https://github.com/xoptech/Laboratory-3-Laravel-Pages-Controllers-and-Routes.git && cd Laboratory-3-Laravel-Pages-Controllers-and-Routes && composer install && cp .env.example .env && php artisan key:generate && php artisan serve
+~~~
+
+**Windows (Command Prompt):**
+~~~bash
+git clone https://github.com/xoptech/Laboratory-3-Laravel-Pages-Controllers-and-Routes.git && cd Laboratory-3-Laravel-Pages-Controllers-and-Routes && composer install && copy .env.example .env && php artisan key:generate && php artisan serve
+~~~
+
+**Windows (PowerShell):**
+~~~bash
+git clone https://github.com/xoptech/Laboratory-3-Laravel-Pages-Controllers-and-Routes.git; cd Laboratory-3-Laravel-Pages-Controllers-and-Routes; composer install; copy .env.example .env; php artisan key:generate; php artisan serve
+~~~
